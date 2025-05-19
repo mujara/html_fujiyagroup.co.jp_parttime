@@ -1,0 +1,3533 @@
+@use "../_setting" as s;
+
+body.home #wrapper{
+	.mainVisual {
+		background:s.$colorType01;
+		display:block;
+		padding-bottom:2em;
+		margin-bottom:2em;
+		@include s.media(m){
+			background:none;
+			padding-bottom:0;
+			margin-bottom:0;
+		}
+		.inBase{
+			position:relative;
+		}
+		&__image{
+			width:111%;
+			margin-left:-5.5%;
+			display:block;
+			position:relative;
+			@include s.media(m){
+				width:100%;
+				margin-left:0;
+				z-index:-1;
+			}
+			img{
+				width:100%;
+			}
+			&::before{
+				@include s.media(m){
+					content:" ";
+					width:185%;
+					height:49em;
+					display:block;
+					background: url(../img/home/bgMainVisual.png) no-repeat left top;
+					background-size:100% auto;
+					position:absolute;
+					top:0;
+					left:-27.5em;
+				}
+				@include s.media(xl){
+					position:absolute;
+					top:0;
+					left:-31.5em;
+				}
+			}
+		}
+		&__content{
+			display:block;
+			@include s.media(m){
+				width:60.8%;
+				position:absolute;
+				top:3.6em;
+				right:3.4em;
+			}
+		}
+		&__copy{
+			display:block;
+			position:absolute;
+			top:35%;
+			left:0;
+			width:70%;
+			margin-left:15%;
+			@include s.media(m){
+				position: static;
+				width:28em;
+				margin-left:7.6em;
+			}
+			@include s.media(xl){
+				width:32.3em;
+				margin-left:7.6em;
+			}
+			img{
+				width:100%;
+			}
+		}
+		&__word{
+			font-size:1.2em;
+			display:block;
+			font-family: 'Noto Sans JP', sans-serif;
+			font-weight:800;
+			position:absolute;
+			top:18%;
+			right:4%;
+			@include s.media(m){
+				position: static;
+				font-size:1.6em;
+				transform: rotate(-14deg);
+			    -moz-transform: rotate(-14deg);
+			    -webkit-transform: rotate(-14deg);
+				margin-left:7em;
+				margin-top:-1.5em;
+				text-shadow:1px 1px 0 #FFF, -1px -1px 0 #FFF,
+	              -1px 1px 0 #FFF, 1px -1px 0 #FFF,
+	              0px 1px 0 #FFF,  0-1px 0 #FFF,
+	              -1px 0 0 #FFF, 1px 0 0 #FFF;
+			}
+		}
+		&__mainBand{
+			width:111%;
+			margin-left:-5.5%;
+			display:block;
+			@include s.media(m){
+				display:none;
+			}
+			img{
+				width:100%;
+			}
+		}
+		&__point{
+			display:block;
+			margin-top:-3em;
+			@include s.media(m){
+				margin-top:-1em;
+			}
+			img{
+				width:100%;
+			}
+		}
+		&__button{
+			display:none;
+			@include s.media(m){
+				display:block;
+				text-align:right;
+				margin-top:-1em;
+				margin-right: -5em;
+				z-index:3;
+			}
+			.buttonEntry{
+				a{
+					padding:0.7em 5em 0.7em 2em;
+					&::before{
+						height:2.5em;
+						@include s.media(m){
+							height:1.8em;
+						}
+						@include s.media(xl){
+							height:2em;
+						}
+					}
+					&::before{
+						@include s.media(m){
+							height:2.23em;
+						}
+						@include s.media(xl){
+							height:2.53em;
+						}
+					}
+					&::after{
+						width:2.2em;
+						height:4.4em;
+						position:absolute;
+						top:50%;
+						right:2em;
+						margin-top:-1.25em;
+						@include s.media(m){
+							width:1.8em;
+							height:4em;
+							margin-top:-1.8em;
+						}
+						@include s.media(xl){
+							width:1.8em;
+							height:3.5em;
+						}
+					}
+					&:hover{
+						&::before{
+							height:0;
+						}
+						&::after{
+							right:1.5em;
+						}
+					}
+					img{
+						width:14em;
+						@include s.media(m){
+							width:11em;
+						}
+						@include s.media(xl){
+							width:14em;
+						}
+					}
+				}
+			}
+		}
+		&__scroll{
+			display:block;
+			width:100%;
+			text-align:center;
+			position:absolute;
+			top:60%;
+			left:0;
+			@include s.media(m){
+				margin-top:-3em;
+				position: static;
+			}
+			figure{
+  				animation: yurayura_sp 3s ease infinite;
+				span{
+					width:2.5em;
+					position:relative;
+					display:inline-block;
+					@include s.media(m){
+						width:4.2em;
+  					animation: yurayura 3s ease infinite;
+					}
+					&::before{
+						content:" ";
+						width:5em;
+						height:2em;
+						display:block;
+						background: url(../img/home/sentScroll.png) no-repeat center top;
+						background-size:100% auto;
+						position:absolute;
+						top:-2em;
+						left:50%;
+						margin-left:-2.5em;
+					}
+					&::after{
+						content:" ";
+						width:100%;
+						height:4.5em;
+						display:block;
+						background: url(../img/common/btnRise.svg) no-repeat center top;
+						background-size:100% auto;
+						transform: scale(1, -1);
+						position:absolute;
+						top:0;
+						left:0;
+						@include s.media(m){
+							content:none;
+						}
+					}
+					img{
+						display:none;
+						width:100%;
+						transform: scale(1, -1);
+						@include s.media(m){
+							display:inline;
+						}
+					}
+				}
+			}
+		}
+	}
+}
+
+
+@keyframes yurayura {
+  0% , 100%{
+      transform: translateY(0);
+  }
+  50%{
+      transform: translateY(40px);
+  }
+}
+
+@keyframes yurayura_sp {
+  0% , 100%{
+      transform: translateY(0);
+  }
+  50%{
+      transform: translateY(20px);
+  }
+}
+
+#wrapper .topSentenceSp{
+	width:100%;
+	display:block;
+	margin-bottom:2em;
+	img{
+		width:100%;
+	}
+	@include s.media(m){
+		display:none;
+	}
+}
+
+#wrapper .chachIllustSp{
+	width:111%;
+	display:block;
+	margin-left:-5.5%;
+	margin-bottom:2em;
+	@include s.media(m){
+		margin-left:0;
+		margin-bottom:0;
+	}
+}
+
+#wrapper .homeAboutBox{
+	display:block;
+	position:relative;
+	width:100%;
+	margin-bottom:2em;
+	@include s.media(m){
+		padding-top:8em;
+		margin-bottom:7em;
+	}
+	@include s.media(xl){
+		padding-top:10em;
+	}
+	img{
+		width:100%;
+	}
+	&__chachIllust{
+		display:block;
+		@include s.media(m){
+			width:30em;
+			position:absolute;
+			top:0;
+			left:0;
+			z-index:1;
+			display:block;
+		}
+		@include s.media(xl){
+			width:36.3em;
+		}
+	}
+	&__fukidashi{
+		display:none;
+		@include s.media(m){
+			width:18em;
+			position:absolute;
+			top:2em;
+			left:31em;
+			z-index:1;
+			display:block;
+		}
+		@include s.media(xl){
+			width:21.1em;
+			position:absolute;
+			top:2em;
+			left:37.9em;
+		}
+	}
+	&__chachWord{
+		display:none;
+		@include s.media(m){
+			display:block;
+			width:7em;
+			position:absolute;
+			top:2em;
+			right:3em;
+			z-index:1;
+		}
+		@include s.media(xl){
+			width:7.9em;
+		}
+	}
+	&__inner{
+		@include s.media(m){
+			width:100%;
+			display:block;
+			position:relative;
+			background:#FFF;
+			transform: skewY(-6deg);
+			overflow:hidden;
+		}
+	}
+	&__sent{
+		font-family: 'Noto Sans JP', sans-serif;
+		font-weight:800;
+		font-size:1em;
+		letter-spacing:0.1em;
+		text-align:center;
+		@include s.media(m){
+			width:45%;
+			font-size:1.3em;
+			display:block;
+			float:right;
+			transform: skewY(6deg);
+			margin-top:4em;
+			padding-right:1.5em;
+			text-align:left;
+		}
+		@include s.media(xl){
+			margin-top:4em;
+			padding-right:1.5em;
+		}
+		br{
+			@include s.media(m){
+				display:none;
+			}
+		}
+	}
+	&__staff{
+		width:50%;
+		height:10em;
+		display:block;
+		margin-left:1em;
+		position:relative;
+		z-index:-1;
+		@include s.media(m){
+			clear:both;
+			width:18em;
+			height:10em;
+			margin-left:2em;
+			transform: skewY(6deg);
+			float:left;
+		}
+		@include s.media(xl){
+			width:20.4em;
+			height:15em;
+			margin-left:3em;
+		}
+		&::before{
+			content:" ";
+			width:10em;
+			height:2em;
+			display:block;
+			background: url(../img/home/imgStaffsSent.png) no-repeat center top;
+			background-size:100% auto;
+			position:absolute;
+			top:5em;
+			right:-10em;
+			@include s.media(m){
+				width:10em;
+				height:2em;
+				position:absolute;
+				top:4em;
+				right:7em;
+				transform: skewY(-12deg);
+			}
+			@include s.media(xl){
+				width:10em;
+				height:2em;
+				position:absolute;
+				top:7.5em;
+				right:8.5em;
+			}
+		}
+		img{
+			@include s.media(m){
+				margin-top:3em;
+			}
+			@include s.media(xl){
+				margin-top:6em;
+			}
+		}
+	}
+	&__voice{
+		display:block;
+		@include s.media(m){
+			width:42em;
+			height:20em;
+			float:right;
+			transform: skewY(6deg);
+		}
+		@include s.media(xl){
+			width:51.1em;
+			height:25em;
+		}
+		img{
+			@include s.media(m){
+				margin-top:0;
+			}
+			@include s.media(xl){
+				margin-top:1em;
+			}
+		}
+	}
+}
+
+
+
+#wrapper .homeAccessBox{
+	display:block;
+	position:relative;
+	width:100%;
+	background:#FFF;
+	padding-top:2em;
+	margin-bottom:2em;
+	padding-bottom:2em;
+	@include s.media(m){
+		padding-top:0;
+		margin-bottom:7em;
+		padding-bottom:0;
+		background:none;
+	}
+	@include s.media(xl){
+	}
+	img{
+		width:100%;
+	}
+	&__inner{
+		display:block;
+		@include s.media(m){
+			width:100%;
+			position:relative;
+			background:#FFF;
+			transform: skewY(-6deg);
+			padding-top:7em;
+		}
+		@include s.media(xl){
+		}
+	}
+	&__chachIllust{
+		display:block;
+		@include s.media(m){
+			width:24em;
+			position:absolute;
+			top:-4em;
+			right:0;
+			z-index:1;
+			transform: skewY(6deg);
+			display:block;
+		}
+		@include s.media(xl){
+			width:27.9em;
+		}
+	}
+	&__fukidashi{
+		display:none;
+		@include s.media(m){
+			width:17.5em;
+			position:absolute;
+			top:-3.5em;
+			right:25em;
+			transform: skewY(6deg);
+			display:block;
+		}
+		@include s.media(xl){
+			width:20.9em;
+			position:absolute;
+			top:-3.5em;
+			right:29em;
+		}
+	}
+	&__chachWord{
+		display:none;
+		@include s.media(m){
+			display:block;
+			width:7em;
+			position:absolute;
+			top:-2.5em;
+			left:3em;
+			z-index:1;
+			transform: skewY(6deg);
+		}
+		@include s.media(xl){
+			width:7.9em;
+		}
+	}
+	&__sent{
+		display:block;
+		font-family: 'Noto Sans JP', sans-serif;
+		font-weight:800;
+		letter-spacing:0.1em;
+		margin-bottom:2em;
+		text-align:center;
+		@include s.media(m){
+			font-size:1.3em;
+			width:14.5em;
+			position:absolute;
+			top:6em;
+			left:1.5em;
+			transform: skewY(6deg);
+			margin-bottom:0;
+			text-align:left;
+		}
+		@include s.media(xl){
+			width:15em;
+			position:absolute;
+			top:7em;
+			left:3em;
+		}
+		br{
+			@include s.media(m){
+				display:none;
+			}
+		}
+	}
+	&__map{
+		display:block;
+		@include s.media(m){
+			padding-right:2em;
+			padding-left:2em;
+			transform: skewY(6deg);
+			z-index:1;
+			position:relative;
+		}
+		@include s.media(xl){
+			padding-right:2em;
+			padding-left:2em;
+		}
+	}
+}
+
+#wrapper .homePositionBox{
+	display:block;
+	position:relative;
+	width:100%;
+	margin-bottom:3em;
+	@include s.media(m){
+	}
+	img{
+		width:100%;
+	}
+	&__chachIllust{
+		@include s.media(m){
+			width:25em;
+			position:absolute;
+			top:0;
+			left:0;
+			z-index:1;
+			display:block;
+		}
+		@include s.media(xl){
+			width:29.9em;
+		}
+	}
+	&__fukidashi{
+		display:none;
+		@include s.media(m){
+			width:14em;
+			position:absolute;
+			top:0;
+			left:17em;
+			display:block;
+			z-index:1;
+		}
+		@include s.media(xl){
+			width:16.8em;
+			position:absolute;
+			top:0;
+			left:21.1em;
+		}
+	}
+	&__chachWord{
+		display:none;
+		@include s.media(m){
+			width:7em;
+			position:absolute;
+			top:0;
+			right:1.5em;
+			display:block;
+			z-index:1;
+		}
+		@include s.media(xl){
+			width:7.9em;
+			position:absolute;
+			top:0;
+			right:3em;
+		}
+	}
+	&__sent{
+		display:block;
+		font-family: 'Noto Sans JP', sans-serif;
+		font-weight:800;
+		letter-spacing:0.1em;
+		display:block;
+		margin-bottom:2em;
+		text-align:center;
+		@include s.media(m){
+			text-align:left;
+			font-size:1.3em;
+			margin-top:4em;
+			margin-left:25em;
+			width:16em;
+			display:block;
+		}
+		@include s.media(xl){
+			margin-left:29.9em;
+			width:17em;
+		}
+		br{
+			@include s.media(m){
+				display:none;
+			}
+		}
+	}
+	&__questionBox{
+		display:none;
+		@include s.media(m){
+			width:36em;
+			margin-left:26em;
+			display:block;
+		}
+		@include s.media(xl){
+			width:38.8em;
+			margin-left:32.5em;
+		}
+		ul{
+			li{
+				width:48%;
+				display:block;
+				float:left;
+				&+li{
+					margin-left:4%;
+				}
+				&:nth-child(1) p{
+					&::before{
+						content:" ";
+						width:7.24em;
+						height:4.25em;
+						display:block;
+						background: url(../img/home/imgArrow3.png) no-repeat center bottom;
+						background-size:100% auto;
+						position:absolute;
+						bottom:-4.2em;
+						left:50%;
+						margin-left:-3.62em;
+					}
+				}
+				p{
+					font-family: 'Noto Sans JP', sans-serif;
+					font-weight:800;
+					font-size:2em;
+					text-align:center;
+					color:s.$colorType02;
+					background:#FFF;
+					padding:1em 1em;
+					line-height:1.4;
+					position:relative;
+					margin-bottom:1.5em;
+					@include s.media(m){
+						padding:0.5em 0.5em;
+						font-size:1.8em;
+					}
+					@include s.media(xl){
+						padding:1em 1em;
+						font-size:2em;
+					}
+					&::before{
+						content:" ";
+						width:0.2em;
+						height:1em;
+						display:block;
+						background: #ff668f;
+						position:absolute;
+						bottom:-1em;
+						left:50%;
+						margin-left:-0.1em;
+					}
+				}
+				small{
+					font-family: 'Noto Sans JP', sans-serif;
+					font-weight:800;
+					font-size:1.4em;
+					text-align:center;
+					color:#727171;
+					display:block;
+					line-height:1.4;
+					margin-bottom:1.5em;
+					@include s.media(m){
+						font-size:1.3em;
+						margin-bottom:2em;
+					}
+					@include s.media(xl){
+						font-size:1.4em;
+						margin-bottom:1.5em;
+					}
+				}
+			}
+		}
+	}
+	&__question{
+		font-family: 'Noto Sans JP', sans-serif;
+		font-weight:800;
+		font-size:1.6em;
+		margin-bottom:0.5em;
+	}
+	&__questionBoxSp{
+		display:block;
+		@include s.media(m){
+			display:none;
+		}
+	}
+	&__requestBox{
+		width:100%;
+		display:flex;
+		justify-content:space-between;
+		align-items:center;
+		@include s.media(m){
+			padding:0 3.8em;
+		}
+	}
+	&__request{
+		display:block;
+		width:48%;
+		@include s.media(m){
+		}
+		&:nth-child(2) .homePositionBox__positionBox{
+			border:s.$colorType04 solid 3px;
+			@include s.media(m){
+				border:s.$colorType04 solid 10px;
+			}
+		}
+	}
+	&__positionImage{
+		display:none;
+		@include s.media(m){
+			display:block;
+		}
+	}
+	&__positionImageSp{
+		text-align:center;
+		width:100%;
+		display:block;
+		border-radius:50%;
+		overflow:hidden;
+		display:block;
+		margin-bottom:1em;
+		@include s.media(m){
+			display:none;
+		}
+	}
+	&__requestTitle{
+		font-family: 'Noto Sans JP', sans-serif;
+		font-weight:800;
+		font-size:1.1em;
+		text-align:center;
+		color:s.$colorType02;
+		background:#FFF;
+		padding:1em 0.5em;
+		line-height:1.4;
+		margin-bottom:2.7em;
+		position:relative;
+		@include s.media(m){
+			font-size:2em;
+			padding:1em 0.5em;
+			font-size:1.8em;
+		}
+		@include s.media(xl){
+			padding:1em 1em;
+			font-size:2em;
+		}
+		&::before{
+			content:" ";
+			width:2.2em;
+			height:2.3em;
+			display:block;
+			background: url(../img/home/imgArrow2.png) no-repeat center bottom;
+			background-size:100% auto;
+			position:absolute;
+			bottom:-2.3em;
+			left:50%;
+			margin-left:-1.1em;
+		}
+	}
+	&__positionBox{
+		display:block;
+		background:#FFF;
+		border:s.$colorType02 solid 3px;
+		padding:1em;
+		@include s.media(m){
+			border:s.$colorType02 solid 10px;
+			padding:2em;
+		}
+		@include s.media(xl){
+			padding:2.5em;
+		}
+	}
+	&__position{
+		display:block;
+		text-align:center;
+		font-family: 'Open Sans', sans-serif;
+		font-style: italic;
+		font-weight:800;
+		color:#000;
+		font-size:1.1em;
+		margin-top:0.2em;
+		margin-bottom:0.5em;
+		@include s.media(m){
+			font-size:2.5em;
+			margin-bottom:0.2em;
+		}
+		@include s.media(xl){
+			font-size:2.8em;
+		}
+	}
+	&__sentence{
+		font-family: 'Noto Sans JP', sans-serif;
+		font-weight:500;
+		font-size:0.9em;
+		letter-spacing:0.1em;
+		color:#000;
+		@include s.media(m){
+			font-weight:800;
+			font-size:1.2em;
+		}
+		@include s.media(xl){
+			font-size:1.3em;
+		}
+	}
+}
+
+
+#wrapper .homeMeritBox{
+	display:block;
+	background:#FFF;
+	padding-top:2em;
+	padding-bottom:2em;
+	@include s.media(m){
+		background:none;
+		padding-top:0;
+		padding-bottom:0;
+	}
+	.inBase{
+		position:relative;
+		display:block;
+	}
+	img{
+		width:100%;
+	}
+	&__chachIllust{
+		display:block;
+		@include s.media(m){
+			width:26em;
+			margin-right:1em;
+			float:right;
+			z-index:1;
+			position:relative;
+		}
+		@include s.media(xl){
+			width:29.1em;
+			margin-right:2.2em;
+		}
+	}
+	&__fukidashi{
+		display:none;
+		@include s.media(m){
+			width:23em;
+			position:absolute;
+			top:4em;
+			right:28em;
+			display:block;
+		}
+		@include s.media(xl){
+			width:29.3em;
+			position:absolute;
+			top:5em;
+			right:33em;
+		}
+	}
+	&__chachWord{
+		display:none;
+		@include s.media(m){
+			width:6.7em;
+			position:absolute;
+			top:7em;
+			left:3em;
+			z-index:1;
+			display:block;
+		}
+		@include s.media(xl){
+			width:8.3em;
+		}
+	}
+	&__inner{
+		display:block;
+		@include s.media(m){
+			width:100%;
+			display:flex;
+			flex-wrap:wrap;
+			justify-content:space-between;
+			clear:both;
+			margin-top:-9em;
+		}
+	}
+	&__merit{
+		display:block;
+		background:#FFF3F3;
+		margin-bottom:1.5em;
+		padding:1.5em;
+		position:relative;
+		@include s.media(m){
+			width:47%;
+			background:#FFF;
+			transform: skewY(-6deg);
+			margin-bottom:6em;
+			padding:2em;
+		}
+		&:nth-child(1){
+			@include s.media(m){
+				margin-top:-7em;
+			}
+			@include s.media(xl){
+			}
+		}
+		&:nth-child(2){
+			@include s.media(m){
+				margin-top:-3em;
+			}
+			@include s.media(xl){
+			}
+		}
+		&:nth-child(3){
+			@include s.media(m){
+				margin-top:-3em;
+			}
+			@include s.media(xl){
+			}
+			.homeMeritBox__image{
+				@include s.media(m){
+					margin-top:-8em;
+				}
+			}
+		}
+		&:nth-child(4){
+			@include s.media(m){
+				margin-top:-3em;
+			}
+			@include s.media(xl){
+			}
+			.homeMeritBox__image{
+				@include s.media(m){
+					margin-top:-4em;
+					margin-bottom:3em;
+				}
+			}
+		}
+	}
+	&__number{
+		display:none;
+		@include s.media(m){
+			font-family: 'Open Sans', sans-serif;
+			font-style: italic;
+			font-weight:800;
+			color:#FFF;
+			position:relative;
+			width:2.3em;
+			height:2.7em;
+			padding-top:0.7em;
+			padding-left:0.5em;
+			transform: skewY(6deg);
+			font-size:2.5em;
+			display:block;
+		}
+		@include s.media(xl){
+			font-size:3em;
+		}
+		&::before{
+			content:" ";
+			width:2.3em;
+			height:2.7em;
+			display:block;
+			background: url(../img/home/imgBeer.png) no-repeat center bottom;
+			background-size:100% auto;
+			position:absolute;
+			top:0;
+			left:0;
+			z-index:-1;
+			@include s.media(m){
+				width:2.4em;
+				height:2.9em;
+			}
+			@include s.media(xl){
+				width:2.3em;
+				height:2.7em;
+			}
+		}
+	}
+	&__image{
+		width:26%;
+		position:absolute;
+		top:5em;
+		left:1.5em;
+		@include s.media(m){
+			position:static;
+			transform: skewY(6deg);
+			width:14em;
+			margin:-6em auto 1em;
+		}
+		@include s.media(xl){
+			width:18.3em;
+		}
+	}
+	&__lead{
+		color:s.$colorType02;
+		font-family: 'Noto Sans JP', sans-serif;
+		font-weight:800;
+		font-size:1.3em;
+		letter-spacing:0.1em;
+		margin-bottom:0.6em;
+		@include s.media(m){
+			font-size:1.6em;
+			color:#FF6790;
+			transform: skewY(6deg);
+		}
+		span{
+			display:inline-block;
+			transform: skewX(-6deg);
+			@include s.media(m){
+				display:none;
+			}
+		}
+	}
+	&__sentence{
+		font-family: 'Noto Sans JP', sans-serif;
+		font-weight:500;
+		font-size:1.1em;
+		letter-spacing:0.1em;
+		display:block;
+		padding-left:34%;
+		@include s.media(m){
+			font-family: 'Noto Sans JP', sans-serif;
+			font-weight:800;
+			font-size:1.3em;
+			padding-left:0;
+			transform: skewY(6deg);
+		}
+	}
+}
+
+.homeStaffBox{
+	width:111%;
+	margin-left:-5.5%;
+	background:#FFF;
+	border:s.$colorType02 solid 1.2em;
+	position:relative;
+	padding:3em 2em 2em;
+	margin-bottom:4em;
+	@include s.media(m){
+		border:s.$colorType02 solid 4px;
+		width:70%;
+		margin-left:auto;
+		margin-right:auto;
+		display:flex;
+		justify-content:center;
+		align-items:center;
+		padding:2em 0 1em 0;
+	}
+	@include s.media(xl){
+		padding:2em 0;
+	}
+	&.--type02{
+		@include s.media(m){
+			width:75%;
+		}
+		.homeStaffBox__inner{
+			@include s.media(m){
+				width:40%;
+			}
+			@include s.media(xl){
+				width:40%;
+			}
+		}
+		.homeStaffBox__sentence{
+			@include s.media(m){
+				font-size:1em;
+				padding-left:2em;
+			}
+			@include s.media(xl){
+				font-size:1.1em;
+			}
+		}
+	}
+	img{
+		width:100%;
+	}
+	&__number{
+		font-family: 'Open Sans', sans-serif;
+		font-style: italic;
+		font-weight:800;
+		color:#FFF;
+		position:absolute;
+		top:-0.6em;
+		left:1em;
+		background:s.$colorType02;
+		display:inline-block;
+		font-size:1.3em;
+		padding:0 0.7em;
+		@include s.media(m){
+			position:absolute;
+			top:1em;
+			left:0;
+		}
+		span{
+			font-size:1.2em;
+			@include s.media(m){
+				font-size:1em;
+			}
+		}
+		&+.homeStaffBox__status{
+			display:flex;
+			margin-bottom:3em;
+			span{
+				padding:0.1em 1em;
+			}
+			@include s.media(m){
+				display:none;
+			}
+		}
+	}
+	&__inner{
+		display:block;
+		@include s.media(m){
+			width:48%;
+			text-align:center;
+		}
+	}
+	&__image{
+		display:block;
+		width:40%;
+		overflow:hidden;
+		border-radius:50%;
+		margin-bottom:1em;
+		@include s.media(m){
+			width:15.9em;
+			margin-left:auto;
+			margin-right:auto;
+			margin-bottom:0.5em;
+		}
+	}
+	&__info{
+		display:block;
+		position:absolute;
+		width:52%;
+		top:3em;
+		right:0;
+		@include s.media(m){
+			width:auto;
+			position:static;
+		}
+		.homeStaffBox__status{
+			display:none;
+			@include s.media(m){
+				display:flex;
+			}
+		}
+	}
+	&__name{
+		font-family: 'Noto Sans JP', sans-serif;
+		font-weight:800;
+		color:s.$colorType02;
+		font-size:1.6em;
+		position:relative;
+		display:inline-block;
+		margin-top:1em;
+		@include s.media(m){
+			margin-left:-2.3em;
+			font-size:2em;
+			margin-top:0;
+		}
+		&::before{
+			content:" ";
+			width:1.6em;
+			height:0.6em;
+			display:block;
+			background: url(../img/home/sentAge20.png) no-repeat center bottom;
+			background-size:100% auto;
+			position:absolute;
+			bottom:0.4em;;
+			right:-2em;
+			@include s.media(m){
+				width:1.9em;
+				height:0.6em;
+				position:absolute;
+				bottom:0.4em;;
+				right:-2.3em;
+			}
+		}
+		small{
+			font-size:0.6em;
+		}
+		&.--typeTwoStar{
+			@include s.media(m){
+				padding-left:2em;
+			}
+			&::after{
+				content:" ";
+				width:2em;
+				height:1.9em;
+				display:block;
+				background: url(../img/home/imgStar02.png) no-repeat center bottom;
+				background-size:100% auto;
+				position:absolute;
+				top:-2em;
+				left:0;
+				@include s.media(m){
+					width:2em;
+					height:1.9em;
+					position:absolute;
+					top:auto;
+					bottom:0.4em;
+					left:-0.3em;
+				}
+			}
+			&+.homeStaffBox__lead{
+				@include s.media(m){
+					display:none;
+				}
+			}
+		}
+	}
+	&__lead{
+		font-family: 'Noto Sans JP', sans-serif;
+		font-weight:800;
+		color:#000;
+		font-size:1.1em;
+		@include s.media(m){
+			font-size:1.2em;
+		}
+		@include s.media(xl){
+			font-size:1.4em;
+		}
+	}
+	&__status{
+		width:100%;
+		align-items:center;
+		justify-content:center;
+		display:flex;
+		font-family: 'Noto Sans JP', sans-serif;
+		font-weight:800;
+		@include s.media(m){
+			font-size:1.1em;
+		}
+		@include s.media(xl){
+			font-size:1.2em;
+		}
+		span{
+			padding:0.1em 0.5em;
+			@include s.media(m){
+				padding:0.1em 0.5em;
+			}
+			&:nth-child(1){
+				background:#FF6790;
+				color:#FFF;
+			}
+			&:nth-child(2){
+				background:#ffe1e9;
+				color:#FF6790;
+			}
+		}
+		&+.homeStaffBox__inner{
+			.homeStaffBox__info{
+				display:block;
+				position:absolute;
+				width:52%;
+				top:6em;
+				right:0;
+				@include s.media(m){
+					width:auto;
+					position:static;
+				}
+			}
+			.homeStaffBox__image{
+				margin-top:-2em;
+				@include s.media(m){
+					margin-top:0;
+				}
+			}
+		}
+	}
+	&__sentence{
+		display:block;
+		font-family: 'Noto Sans JP', sans-serif;
+		font-weight:500;
+		letter-spacing:0.1em;
+		line-height:2;
+		@include s.media(m){
+			font-size:1.2em;
+			padding-right:1em;
+			padding-left:1em;
+		}
+		@include s.media(xl){
+			font-size:1.4em;
+			padding-right:2em;
+			padding-left:0;
+		}
+	}
+	
+	.accordionBox--type03{
+		@include s.media(m){
+			display:block;
+			width:52%;
+		}
+		.homeStaffBox__lead{
+			display:none;
+			@include s.media(m){
+				display:block;
+				padding-left:1em;
+				margin-bottom:1em;
+			}
+			@include s.media(xl){
+				padding-left:0;
+			}
+		}
+	}
+}
+
+#wrapper .homeEvaluationBox{
+	display:block;
+	position:relative;
+	width:100%;
+	@include s.media(m){
+		padding-top:8em;
+		margin-bottom:7em;
+	}
+	@include s.media(xl){
+		padding-top:10em;
+	}
+	img{
+		width:100%;
+	}
+	&__chachIllust{
+		display:block;
+		@include s.media(m){
+			width:28em;
+			position:absolute;
+			top:0;
+			left:-1em;
+			z-index:1;
+		}
+		@include s.media(xl){
+			width:34.5em;
+		}
+	}
+	&__fukidashi{
+		display:none;
+		@include s.media(m){
+			width:17.5em;
+			position:absolute;
+			top:1em;
+			left:29em;
+			z-index:1;
+			display:block;
+		}
+		@include s.media(xl){
+			width:20.4em;
+			position:absolute;
+			top:1em;
+			left:35em;
+		}
+	}
+	&__chachWord{
+		display:none;
+		@include s.media(m){
+			width:7em;
+			position:absolute;
+			top:-1em;
+			right:3em;
+			z-index:1;
+			display:block;
+		}
+		@include s.media(xl){
+			width:7.9em;
+		}
+	}
+	&__inner{
+		width:100%;
+		display:block;
+		position:relative;
+		@include s.media(m){
+			transform: skewY(-6deg);
+			overflow:hidden;
+			margin-top:-5em;
+			background:#FFF;
+		}
+		@include s.media(xl){
+			margin-top:-6em;
+		}
+	}
+	&__sent{
+		display:block;
+		font-family: 'Noto Sans JP', sans-serif;
+		font-weight:800;
+		letter-spacing:0.1em;
+		margin-bottom:2em;
+		text-align:center;
+		@include s.media(m){
+			text-align:left;
+			font-size:1.3em;
+			transform: skewY(6deg);
+			margin-bottom:0;
+		}
+		&.--type02{
+			width:52%;
+			font-weight:500;
+			font-size:1em;
+			display:block;
+			text-align:left;
+			@include s.media(m){
+				font-weight:800;
+				font-size:1.3em;
+				width:17em;
+				height:5em;
+				position:absolute;
+				top:16em;
+				left:1.5em;
+			}
+			@include s.media(xl){
+				width:17em;
+				position:absolute;
+				top:19em;
+				left:3em;
+			}
+			span{
+				display:none;
+				@include s.media(m){
+					display:inline;
+				}
+			}
+		}
+		br{
+			@include s.media(m){
+				display:none;
+			}
+		}
+	}
+	&__sentBox{
+		display:block;
+		@include s.media(m){
+			width:20em;
+			margin-top:10em;
+			margin-left:40%;
+			padding-right:1.5em;
+			margin-bottom:2em;
+		}
+		@include s.media(xl){
+			width:24em;
+			margin-left:42%;
+			padding-right:3em;
+		}
+	}
+	&__lead{
+		display:block;
+		font-family: 'Noto Sans JP', sans-serif;
+		font-weight:800;
+		font-size:1.4em;
+		letter-spacing:0.1em;
+		color:#FF6790;
+		margin-bottom:0.5em;
+		text-align:center;
+		@include s.media(m){
+			text-align:left;
+			color:s.$colorType02;
+			transform: skewY(6deg);
+		}
+		@include s.media(xl){
+			font-size:1.6em;
+		}
+		span{
+			display:block;
+			background:#ff6790;
+			color:#FFF;
+			padding:0.3em 0.7em;
+			@include s.media(m){
+				display:inline;
+			}
+		}
+	}
+	&__lead02{
+		text-align:center;
+		color:s.$colorType02;
+		display:block;
+		font-family: 'Noto Sans JP', sans-serif;
+		font-weight:800;
+		font-size:1.4em;
+		letter-spacing:0.1em;
+		margin-bottom:0.5em;
+		@include s.media(m){
+			display:block;
+			text-align:left;
+			font-size:1.4em;
+			transform: skewY(6deg);
+		}
+		@include s.media(xl){
+			font-size:1.6em;
+		}
+		span{
+			display:none;
+			@include s.media(m){
+				display:inline;
+			}
+		}
+	}
+	&__image{
+		display:none;
+		@include s.media(m){
+			display:block;
+			padding:0 2.3em;
+			transform: skewY(6deg);
+			margin-top:-11em;
+		}
+		@include s.media(xl){
+			margin-top:-8em;
+		}
+	}
+	&__staff{
+		display:none;
+		@include s.media(m){
+			display:block;
+			width:30em;
+			height:25em;
+			margin-top:-20em;
+			margin-right:1.5em;
+			transform: skewY(6deg);
+			float:right;
+		}
+		@include s.media(xl){
+			width:32.25em;
+			height:25em;
+			margin-right:3em;
+		}
+		img{
+			margin-top:3em;
+			@include s.media(m){
+				margin-top:5em;
+			}
+			@include s.media(xl){
+				margin-top:3em;
+			}
+		}
+	}
+	&__systemBox{
+		display:block;
+		position:relative;
+		@include s.media(m){
+			display:none;
+		}
+		&::before{
+			content:" ";
+			width:12em;
+			height:7em;
+			display:block;
+			background: url(../img/home/imgStaffs3.png) no-repeat center top;
+			background-size:100% auto;
+			position:absolute;
+			top:-7em;;
+			right:0;
+		}
+	}
+	&__systemBoxInner{
+		width:100%;
+		display:flex;
+		align-items:center;
+		border:#FF6790 solid 1px;
+		margin-bottom:2.5em;
+		position:relative;
+		background:#FFF;
+		&+.homeEvaluationBox__systemBoxInner{
+			&::before{
+				content:" ";
+				width:1.8em;
+				height:3em;
+				display:block;
+				background: url(../img/home/imgArrow2.png) no-repeat center bottom;
+				background-size:100% auto;
+				position:absolute;
+				top:-3.5em;;
+				left:50%;
+				margin-left:-0.9em;
+				z-index:-1;
+			}
+		}
+	}
+	&__systemIcon{
+		width:10%;
+		display:block;
+		padding:0.5em;
+		text-align:center;
+		i{
+			display:block;
+			font-size:1.2em;
+			color:#FF6790;
+		}
+		img{
+			width:1.2em;
+		}
+	}
+	&__systemContent{
+		width:90%;
+		display:flex;
+		align-items:center;
+		border-left:#FF6790 solid 1px;
+		position:relative;
+		padding:1em;
+	}
+	&__systemLead{
+		width:100%;
+		display:block;
+		background:#FF6790;
+		position:absolute;
+		top:0;
+		left:0;
+		text-align:center;
+		padding:0.6em;
+		img{
+			width:6em;
+		}
+		&+.homeEvaluationBox__systemSent{
+			padding-top:1em;
+		}
+	}
+	&__systemImage{
+		width:30%;
+		display:block;
+		border-radius:50%;
+		overflow:hidden;
+		background:#E8E2DD;
+		position:relative;
+		z-index:1;
+	}
+	&__systemSent{
+		display:block;
+		padding-left:1em;
+		span{
+			font-family: 'Noto Sans JP', sans-serif;
+			font-weight:800;
+			display:block;
+			font-size:1.1em;
+		}
+		b{
+			color:#FF6790;
+			font-family: 'Noto Sans JP', sans-serif;
+			font-weight:800;
+			font-size:1.4em;
+		}
+	}
+}
+
+
+
+
+#wrapper .homeExperienceBox{
+	display:block;
+	position:relative;
+	width:100%;
+	background:#FFF;
+	padding:2em 0 0;
+	@include s.media(m){
+		padding:0;
+		margin-bottom:7em;
+		background:none;
+	}
+	@include s.media(xl){
+	}
+	img{
+		width:100%;
+	}
+	.inBase{
+		position:relative;
+	}
+	&__bg{
+		display:none;
+		@include s.media(m){
+			width:191%;
+			position:absolute;
+			top:3em;
+			left:0;
+			margin-left:-45.5%;
+			z-index:-1;
+			display:block;
+		}
+	}
+	&__chachIllust{
+		display:block;
+		@include s.media(m){
+			width:27em;
+			position:absolute;
+			top:0;
+			right:0;
+			z-index:1;
+		}
+		@include s.media(xl){
+			width:30.6em;
+		}
+	}
+	&__fukidashi{
+		display:none;
+		@include s.media(m){
+			width:23em;
+			position:absolute;
+			top:0;
+			right:27em;
+			display:block;
+		}
+		@include s.media(xl){
+			width:28.7em;
+			position:absolute;
+			top:0;
+			right:30.6em;
+		}
+	}
+	&__chachWord{
+		display:none;
+		@include s.media(m){
+			width:7.5em;
+			position:absolute;
+			top:0;
+			left:3em;
+			z-index:1;
+			display:block;
+		}
+		@include s.media(xl){
+			width:8.9em;
+		}
+	}
+	&__experienceImage{
+		display:block;
+		width:40%;
+		position:absolute;
+		top:1em;
+		right:0;
+		@include s.media(m){
+			width:10em;
+			position:static;
+		}
+		@include s.media(xl){
+			width:12.8em;
+		}
+	}
+	&__experienceLead{
+		display:block;
+		font-family: 'Noto Sans JP', sans-serif;
+		font-weight:800;
+		font-size:1.5em;
+		letter-spacing:0.1em;
+		color:s.$colorType02;
+		background:#fff3f3;
+		padding:1em 1em;
+		margin-bottom:1em;
+		@include s.media(m){
+			width:15em;
+			font-size:1.3em;
+			background:none;
+			padding:0;
+			margin-bottom:1em;
+		}
+		@include s.media(xl){
+			font-size:1.5em;
+		}
+	}
+	&__experienceSentence{
+		display:block;
+		font-family: 'Noto Sans JP', sans-serif;
+		font-weight:500;
+		font-size:1.2em;
+		letter-spacing:0.1em;
+		margin-bottom:1em;
+		@include s.media(m){
+			font-size:1.1em;
+			margin-bottom:0;
+		}
+		@include s.media(xl){
+			font-size:1.2em;
+		}
+	}
+	&__experiencePoint01{
+		display:block;
+		position:relative;
+		@include s.media(m){
+			width:23em;
+			padding-top:7em;
+			margin-left:11em;
+			margin-bottom:2em;
+		}
+		@include s.media(xl){
+			width:27.4em;
+			padding-top:8.6em;
+			margin-left:13.6em;
+		}
+		.homeExperienceBox__experienceImage{
+			@include s.media(m){
+				float:right;
+				position:static;
+			}
+		}
+		.homeExperienceBox__experienceLead{
+			@include s.media(m){
+				margin-top:1.5em;
+			}
+		}
+		.homeExperienceBox__experienceSentence{
+			clear:both;
+			@include s.media(m){
+				width:19em;
+			}
+		}
+	}
+	&__experiencePoint02{
+		display:block;
+		position:relative;
+		@include s.media(m){
+			width:23em;
+			margin-left:2em;
+		}
+		@include s.media(xl){
+			width:27.5em;
+			margin-left:3.5em;
+		}
+		.homeExperienceBox__experienceImage{
+			position:absolute;
+			top:2em;
+			right:0;
+			@include s.media(m){
+				float:right;
+				margin-bottom:1em;
+				position:static;
+			}
+		}
+		.homeExperienceBox__experienceLead{
+			padding-top:0.5em;
+		}
+		.homeExperienceBox__experienceSentence{
+			@include s.media(m){
+				clear:both;
+				width:20em;
+			}
+		}
+	}
+	&__experiencePoint03{
+		display:block;
+		position:relative;
+		@include s.media(m){
+			width:25em;
+			margin-top:-15em;
+			margin-left:31em;
+			margin-left:25em;
+		}
+		@include s.media(xl){
+			margin-left:31em;
+		}
+		.homeExperienceBox__experienceImage{
+			@include s.media(m){
+				margin-bottom:1em;
+				position:static;
+			}
+		}
+		.homeExperienceBox__experienceLead{
+			@include s.media(m){
+				margin-bottom:1em;
+			}
+		}
+		.homeExperienceBox__experienceSentence{
+			@include s.media(m){
+				width:19em;
+			}
+		}
+	}
+	&__image{
+		display:none;
+		@include s.media(m){
+			width:21em;
+			position:absolute;
+			top:27em;
+			right:1.5em;
+			line-height:1.9;
+			display:block;
+		}
+		@include s.media(xl){
+			width:24.9em;
+			top:30.4em;
+			right:3em;
+		}
+	}
+	&__after{
+		display:block;
+		width:111%;
+		margin-left:-5.5%;
+		background:#dedede url(../img/home/background2.png) repeat center top;
+		background-size:14em auto;
+		padding:2em 1.5em;
+		position:relative;
+		@include s.media(m){
+			background:none;
+			width:33em;
+			margin-top:8em;
+			margin-left:30em;
+			padding:0;
+		}
+		@include s.media(xl){
+			width:36.2em;
+			margin-top:10em;
+			margin-left:34.7em;
+		}
+		&::before{
+			content:" ";
+			width:10em;
+			height:18em;
+			display:block;
+			background: url(../img/home/imgBeer_sp.png) no-repeat center bottom;
+			background-size:100% auto;
+			position:absolute;
+			top:0;
+			right:0;
+			@include s.media(m){
+				content:none;
+			}
+		}
+	}
+	&__afterLead{
+		display:block;
+		font-family: 'Noto Sans JP', sans-serif;
+		font-weight:900;
+		letter-spacing:0.1em;
+		color:#000;
+		font-size:1.7em;
+		margin-bottom:0.5em;
+		line-height:1.4;
+		position:relative;
+		z-index:1;
+		@include s.media(m){
+			font-family: 'Noto Sans JP', sans-serif;
+			font-weight:800;
+			font-size:1.3em;
+			color:s.$colorType02;
+			line-height:1.7;
+		}
+		@include s.media(xl){
+			font-size:1.5em;
+		}
+	}
+	&__afterTitle{
+		width:75%;
+		display:block;
+		background:#000;
+		padding:0.5em 0.6em;
+		margin-bottom:1em;
+		position:relative;
+		z-index:1;
+		@include s.media(m){
+			width:100%;
+			padding:0.3em 0.6em;
+		}
+		img{
+			@include s.media(m){
+				width:24em;
+			}
+			@include s.media(xl){
+				width:27.4em;
+			}
+		}
+	}
+	&__afterSntence{
+		display:block;
+		font-family: 'Noto Sans JP', sans-serif;
+		font-weight:800;
+		font-size:1.1em;
+		letter-spacing:0.1em;
+		position:relative;
+		z-index:1;
+		@include s.media(m){
+			font-size:1.2em;
+		}
+		@include s.media(xl){
+			font-size:1.3em;
+		}
+	}
+}
+
+.homeToEntryBox{
+	display:none;
+	@include s.media(m){
+		text-align:center;
+		display:block;
+		position:relative;
+		z-index:1;
+	}
+	&__title{
+		font-family: 'Noto Sans JP', sans-serif;
+		font-weight:900;
+		font-size:2em;
+		color:#000;
+		margin-bottom:0.3em;
+		@include s.media(m){
+			font-size:1.7em;
+		}
+		@include s.media(xl){
+			font-size:2em;
+		}
+	}
+	&__title{
+		font-family: 'Noto Sans JP', sans-serif;
+		font-weight:900;
+		font-size:1.7em;
+		color:s.$colorType02;
+		margin-bottom:0.3em;
+		border:s.$colorType02 solid 1px;
+		display:block;
+		padding:0.5em;
+		@include s.media(m){
+			display:none;
+		}
+	}
+}
+
+
+#wrapper .homeGreetingBox{
+	display:block;
+	position:relative;
+	width:100%;
+	@include s.media(m){
+		margin-top:-5em;
+		padding-top:8em;
+		margin-bottom:7em;
+	}
+	@include s.media(xl){
+		padding-top:10em;
+	}
+	img{
+		width:100%;
+	}
+	&__inner{
+		display:block;
+		@include s.media(m){
+			width:100%;
+			position:relative;
+			background:#FFF url(../img/home/background.png) repeat center top;
+			padding-top:15em;
+		}
+		&::before{
+			@include s.media(m){
+				content:" ";
+				width:101%;
+				height:13em;
+				background:s.$colorType01;
+				transform: skewY(-6deg);
+				display:block;
+				position:absolute;
+				top:-4em;
+				left:0;
+			}
+		}
+	}
+	&__chachIllust{
+		display:block;
+		@include s.media(m){
+			width:26em;
+			position:absolute;
+			top:0;
+			left:0;
+		}
+		@include s.media(xl){
+			width:29em;
+		}
+	}
+	&__fukidashi{
+		display:none;
+		@include s.media(m){
+			display:block;
+			width:14em;
+			position:absolute;
+			top:2em;
+			left:26em;
+			z-index:1;
+		}
+		@include s.media(xl){
+			width:17em;
+			position:absolute;
+			top:2em;
+			left:29em;
+		}
+	}
+	&__chachWord{
+		display:none;
+		@include s.media(m){
+			display:block;
+			width:7em;
+			position:absolute;
+			top:2em;
+			right:3em;
+			z-index:1;
+		}
+		@include s.media(xl){
+			width:7.9em;
+		}
+	}
+	&__content{
+		display:block;
+		background:#FFF;
+		position:relative;
+		padding:2em 1em 0.5em;
+		margin-bottom:2em;
+		@include s.media(m){
+			position:static;
+			background:none;
+			padding:0;
+			margin-bottom:0;
+		}
+	}
+	&__titleSp{
+		width:70%;
+		display:block;
+		margin-bottom:1em;
+		@include s.media(m){
+			display:none;
+		}
+	}
+	&__lead{
+		font-family: 'Noto Sans JP', sans-serif;
+		font-weight:800;
+		letter-spacing:0.1em;
+		margin-bottom:2em;
+		color:#000;
+		font-size:1.2em;
+		@include s.media(m){
+			color:s.$colorType02;
+			font-size:1.3em;
+			margin-bottom:0.5em;
+		}
+		@include s.media(xl){
+			font-size:1.5em;
+		}
+		&.isPC{
+			display:none;
+			@include s.media(m){
+				display:block;
+			}
+			br{
+				display:none;
+			}
+		}
+		&.isSP{
+			display:block;
+			@include s.media(m){
+				display:none;
+			}
+		}
+	}
+	&__sentence{
+		font-family: 'Noto Sans JP', sans-serif;
+		font-weight:500;
+		letter-spacing:0.1em;
+		line-height:1.85;
+		@include s.media(m){
+			font-size:1.1em;
+		}
+		@include s.media(xl){
+			font-size:1.2em;
+		}
+	}
+	&__sentenceBox01{
+		display:block;
+		@include s.media(m){
+			margin-left:27em;
+			padding-right:1.5em;
+			margin-bottom:4em;
+		}
+		@include s.media(xl){
+			margin-left:31.8em;
+			padding-right:3em;
+		}
+	}
+	&__sentenceBox02{
+		display:block;
+		margin-bottom:2em;
+		@include s.media(m){
+			width:34em;
+			padding-left:1.5em;
+			margin-bottom:4em;
+		}
+		@include s.media(xl){
+			width:37.3em;
+			padding-left:3em;
+		}
+	}
+	&__representative{
+		display:block;
+		width:30%;
+		position:absolute;
+		right:2em;
+		top:1em;
+		@include s.media(m){
+			width:23em;
+			position:absolute;
+			right:2em;
+			top:auto;
+			bottom:5em;
+		}
+		@include s.media(xl){
+			width:25.8em;
+			right:6.4em;
+			bottom:6em;
+		}
+	}
+	.accordionBox--type03{
+		z-index:1;
+		position:relative;
+		margin-bottom:1em;
+		@include s.media(m){
+			position:static;
+			margin-bottom:0;
+		}
+	}
+	&__secretBox{
+		display:block;
+		background:s.$colorType02;
+		padding:1em;
+		position:relative;
+		overflow:hidden;
+		@include s.media(m){
+			width:33em;
+			padding-top:2.8em;
+			padding-left:7em;
+			padding-bottom:1em;
+			transform: skewY(-6deg);
+			background:none;
+			background:url(../img/home/bgSecretBox.png) repeat center top;
+			background-size:100% auto;
+			display:block;
+			overflow: visible;
+		}
+		@include s.media(xl){
+			width:36.7em;
+			padding-top:3.2em;
+			padding-left:8em;
+			margin-left:0;
+		}
+	}
+		&__secretBoxTitle{
+			width:46%;
+			@include s.media(m){
+				width:12em;
+				margin-bottom:0.7em;
+			}
+			@include s.media(xl){
+				width:14.6em;
+				margin-bottom:1em;
+			}
+		}
+		&__secretBoxSentence01{
+			color:#000;
+			padding-left:50%;
+			margin-bottom:1em;
+			margin-top:-2em;
+			font-family: 'Noto Sans JP', sans-serif;
+			font-weight:700;
+			@include s.media(m){
+				color:#FFF;
+				font-size:1.1em;
+				margin-bottom:0.7em;
+				padding-left:0;
+				margin-top:0;
+			}
+			@include s.media(xl){
+				font-size:1.2em;
+				margin-bottom:1em;
+			}
+		}
+		&__secretBoxSentence02{
+			padding-left:50%;
+			@include s.media(m){
+				width:11em;
+				margin-bottom:2em;
+				padding-left:0;
+			}
+			@include s.media(xl){
+				width:13.8em;
+				margin-bottom:3em;
+			}
+		}
+		&__image{
+			width:14em;
+			position:absolute;
+			left:-3.8em;
+			bottom:-3.5em;
+			transform: rotate(25deg);
+			@include s.media(m){
+				width:19em;
+				position:absolute;
+				left:auto;
+				right:-1.8em;
+				bottom:-5.3em;
+				transform: rotate(0);
+			}
+			@include s.media(xl){
+				width:22.3em;
+				position:absolute;
+				right:-2.8em;
+				bottom:-6.3em;
+			}
+			span{
+				display:block;
+				position:relative;
+				&::before{
+					content:" ";
+					width:4em;
+					height:2.5em;
+					display:block;
+					background: url(../img/home/imgArrow4_sp.png) no-repeat center top;
+					background-size:100% auto;
+					position:absolute;
+					top:-1em;
+					left:8.5em;
+					transform: rotate(-25deg);
+					@include s.media(m){
+						content:" ";
+						width:2.3em;
+						height:2.3em;
+						background: url(../img/home/imgArrow4.png) no-repeat center top;
+						background-size:100% auto;
+						position:absolute;
+						top:-1em;
+						left:5em;
+						transform: rotate(0);
+					}
+					@include s.media(xl){
+						position:absolute;
+						top:-1em;
+						left:6em;
+					}
+				}
+			}
+		}
+		&__recreation{
+			display:block;
+			@include s.media(m){
+				width:100%;
+				position:relative;
+				z-index:1;
+				text-align:center;
+				margin-top:-5em;
+				transform: skewY(-6deg);
+			}
+			figure{
+				display:none;
+				@include s.media(m){
+					display:block;
+				}
+			}
+			p{
+			}
+		}
+		&__recreationSentence{
+				font-family: 'Noto Sans JP', sans-serif;
+				font-weight:800;
+				color:#000;
+				font-size:1.3em;
+				text-align:center;
+				margin-bottom:1em;
+				@include s.media(m){
+					width:100%;
+					display:block;
+					background:s.$colorType02;
+					padding:0.6em 1;
+					position:absolute;
+					top:50%;
+					left:0;
+					margin-top:-0.9em;
+					font-size:1.1em;
+					margin-bottom:0;
+				}
+				@include s.media(xl){
+					font-size:1.2em;
+				}
+				@include s.media(xxl){
+					font-size:1.4em;
+				}
+				span{
+					display:none;
+					@include s.media(m){
+						display:inline;
+					}
+				}
+				p{
+					margin-bottom:1em;
+					@include s.media(m){
+						margin-bottom:0;
+					}
+				}
+		}
+		&__recreationFukidashi{
+			width:90%;
+			display:none;
+			font-family: 'Noto Sans JP', sans-serif;
+			font-weight:800;
+			font-size:1.1em;
+			text-align:center;
+			display:block;
+			padding:0.5em;
+			border:s.$colorType02 solid 1px;
+			color:s.$colorType02;
+			margin:0 auto 1em;
+			@include s.media(m){
+				width:11em;
+				height:10em;
+				display:block;
+				background: url(../img/home/imgFukidashi.png) no-repeat center top;
+				background-size:100% auto;
+				color:#FFF;
+				font-size:1em;
+				margin:0 0 0 -8em;
+				position:absolute;
+				left:50%;
+				top:-10em;
+				transform: skewY(6deg);
+				padding:2.5em 0 0 0;
+				border:none;
+			}
+			@include s.media(xl){
+			}
+		}
+		&__recreationSp{
+			display:block;
+			margin-bottom:2em;
+			@include s.media(m){
+				display:none;
+			}
+		}
+		&__recreationEvent{
+			p{
+				background:s.$colorType02;
+				color:#FFF;
+				font-family: 'Noto Sans JP', sans-serif;
+				font-weight:800;
+				text-align:center;
+				font-size:1.3em;
+				padding:0.4em 1em;
+			}
+		}
+}
+
+
+
+
+#wrapper .homeQuestionBox{
+	display:block;
+	width:100%;
+	background:#FFF;
+	padding-top:2em;
+	@include s.media(m){
+		margin-bottom:7em;
+		margin-top:-3em;
+		background:none;
+		padding-top:0;
+	}
+	@include s.media(xl){
+	}
+	.inBase{
+		position:relative;
+    		padding-bottom: 1px;
+		@include s.media(m){
+    			padding-bottom: 0;
+		}
+	}
+	img{
+		width:100%;
+	}
+	&__chachIllust{
+		display:block;
+		@include s.media(m){
+			width:27em;
+			position:absolute;
+			top:0;
+			right:0;
+			z-index:1;
+		}
+		@include s.media(xl){
+			width:29.8em;
+		}
+	}
+	&__fukidashi{
+		display:none;
+		@include s.media(m){
+			width:18.5em;
+			position:absolute;
+			top:3em;
+			right:29em;
+			display:block;
+		}
+		@include s.media(xl){
+			width:21.8em;
+			position:absolute;
+			right:32em;
+		}
+	}
+	&__chachWord{
+		display:none;
+		@include s.media(m){
+			width:7.8em;
+			position:absolute;
+			top:3em;
+			left:3em;
+			z-index:1;
+			display:block;
+		}
+		@include s.media(xl){
+			width:8.7em;
+		}
+		&+.homeQuestionBox__questionTitle01{
+			@include s.media(m){
+				margin-top:11em;
+				margin-bottom:1em;
+			}
+			@include s.media(xl){
+				margin-bottom:0;
+			}
+		}
+	}
+	&__sent{
+		display:block;
+		font-family: 'Noto Sans JP', sans-serif;
+		font-weight:800;
+		font-size:1.3em;
+		letter-spacing:0.1em;
+		@include s.media(m){
+			transform: skewY(6deg);
+			width:14.5em;
+			position:absolute;
+			top:6em;
+			left:1.5em;
+		}
+		@include s.media(xl){
+			width:15em;
+			position:absolute;
+			top:7em;
+			left:3em;
+		}
+	}
+	&__questionTitle01{
+		display:inline-block;
+		font-family: 'Noto Sans JP', sans-serif;
+		font-weight:800;
+		font-size:1.3em;
+		letter-spacing:0.1em;
+		color:#000;
+		position:relative;
+		margin-bottom:1em;
+		@include s.media(m){
+			padding:0 0.5em;
+			font-size:1.4em;
+			margin-left:1.7em;
+			margin-bottom:1.4em;
+		}
+		@include s.media(xl){
+			font-size:1.6em;
+			margin-left:1.5em;
+		}
+		&::after{
+			@include s.media(m){
+				content:" ";
+				width:100%;
+				height:0.7em;
+				display:block;
+				background:#ff668f;
+				position:absolute;
+				bottom:-0.1em;
+				left:0;
+				z-index:-1;
+			}
+			@include s.media(xl){
+			}
+		}
+	}
+	&__image{
+		margin-bottom:2em;
+		@include s.media(m){
+			padding:0 3.5em;
+			margin-top:-2em;
+			margin-bottom:2.5em;
+		}
+	}
+	&__answerList{
+		width:100%;
+		display:flex;
+		justify-content:space-between;
+		flex-wrap:wrap;
+		margin-bottom:1.5em;
+		@include s.media(m){
+			padding:0 3em;
+		}
+		li{
+			width:48%;
+			margin-bottom:1.5em;
+			@include s.media(m){
+				width:32%;
+			}
+		}
+		p{
+			background:#FFF3F3;
+			padding:1em;
+			border-radius:0.5em;
+			font-size:1em;
+			color:s.$colorType02;
+			font-family: 'Noto Sans JP', sans-serif;
+			font-weight:700;
+			@include s.media(m){
+				background:#FFF;
+				font-size:1.1em;
+			}
+			@include s.media(xl){
+				font-size:1.2em;
+			}
+			span{
+				display:block;
+				margin-bottom:0.3em;
+			}
+			small{
+				display:block;
+				text-align:right;
+			}
+		}
+	}
+	&__questionTitle02{
+		display:inline-block;
+		font-family: 'Noto Sans JP', sans-serif;
+		font-weight:800;
+		font-size:1.3em;
+		letter-spacing:0.1em;
+		color:#000;
+		padding:0 0.5em;
+		position:relative;
+		margin-bottom:1em;
+		@include s.media(m){
+			font-size:1.4em;
+			margin-left:1.7em;
+		}
+		@include s.media(xl){
+			font-size:1.6em;
+			margin-left:1.5em;
+		}
+	}
+	&__answerBox{
+		display:block;
+		margin-bottom:2em;
+		@include s.media(m){
+			padding:0 3em;
+			margin-bottom:2.5em;
+		}
+	}
+	&__answerBoxInner{
+		display:block;
+		border-radius:0.5em;
+		position:relative;
+		background:#FFF3F3;
+		padding:1em;
+		@include s.media(m){
+			background:#FFF;
+			padding:0;
+			padding-left:11em;
+		}
+		@include s.media(xl){
+			padding-left:14em;
+		}
+		figure{
+			width:28%;
+			position:absolute;
+			top:0.5em;
+			left:0.5em;
+			@include s.media(m){
+				width:7em;
+				position:absolute;
+				top:auto;
+				bottom:0;
+				left:1.5em;
+			}
+			@include s.media(xl){
+				width:9.6em;
+			}
+		}
+		dl{
+			display:block;
+			@include s.media(m){
+				padding:1em 2em 1em 0;
+			}
+			@include s.media(xl){
+				padding:2em 2em 2em 0;
+			}
+			dt{
+				display:inline-block;
+				font-family: 'Noto Sans JP', sans-serif;
+				font-weight:800;
+				font-size:1.2em;
+				color:s.$colorType02;
+				position:relative;
+				margin-left:40%;
+				width:60%;
+				min-height:6em;
+				margin-bottom:0.5em;
+				@include s.media(m){
+					font-size:1.3em;
+					margin-left:0;
+					width:auto;
+					min-height:auto;
+					margin-bottom:0;
+				}
+				@include s.media(xl){
+					font-size:1.4em;
+				}
+				span{
+					color:s.$colorType02;
+					font-size:1.2em;
+					position:absolute;
+					top:-0.2em;
+					left:-1.3em;
+					@include s.media(m){
+						color:#000;
+						position:absolute;
+						top:-0.2em;
+						left:-1.3em;
+					}
+				}
+			}
+			dd{
+				display:inline-block;
+				font-family: 'Noto Sans JP', sans-serif;
+				font-weight:800;
+				font-size:1.2em;
+				color:s.$colorType02;
+				margin-bottom:0.5em;
+				@include s.media(m){
+					font-size:1.3em;
+					margin-left:0;
+					width:auto;
+					min-height:auto;
+					margin-bottom:0;
+				}
+				@include s.media(xl){
+					font-size:1.4em;
+				}
+			}
+		}
+	}
+}
+
+#wrapper .homeFlowBox{
+	display:block;
+	background:#FFF;
+	padding-top:2em;
+	@include s.media(m){
+		background:none;
+		padding-top:0;
+	}
+	&__title{
+		display:block;
+		border:s.$colorType02 solid 3px;
+		background:#FFF;
+		padding:0.8em 1.5em;
+		position:relative;
+		z-index:1;
+		@include s.media(m){
+			width:17em;
+			padding:1.8em 2.2em;
+			margin-left:2em;
+			border:s.$colorType02 solid 5px;
+		}
+		@include s.media(xl){
+			width:19.6em;
+			padding:2em 2.6em;
+		}
+		img{
+			width:50%;
+			@include s.media(m){
+				width:100%;
+			}
+			&+img{
+				@include s.media(m){
+					margin-top:0.2em;
+				}
+			}
+		}
+	}
+	&__inner{
+		width:111%;
+		margin-left:-5.5%;
+		display:block;
+		background:s.$colorType02;
+		padding:3em 2.5em 9em;
+		margin-top:-1.5em;
+		position:relative;
+		@include s.media(m){
+			width:100%;
+			margin-left:0;
+			padding:3em 0 2em;
+			margin-bottom:4em;
+			display:flex;
+			justify-content:space-around;
+		}
+	}
+	&__flow{
+		display:block;
+		position:relative;
+		clear:both;
+		@include s.media(m){
+			width:9em;
+			text-align:center;
+		}
+		@include s.media(xl){
+			width:10.5em;
+		}
+		&+.homeFlowBox__flow{
+			&::before {
+			    	content: "\f0d7";
+			     	font-family: 'icomoon';
+			     	color:#FFF;
+			     	position:absolute;
+			     	font-size:2em;
+			     	left:1.9em;
+			     	top:-1em;
+				@include s.media(m){
+			    		content: "\f04b";
+			     		font-family: 'icomoon';
+			     		color:#FFF;
+			     		position:absolute;
+			     		font-size:1.2em;
+			     		left:-1.8em;
+			     		top:3.2em;
+				}
+				@include s.media(xl){
+			     		position:absolute;
+			     		font-size:1.5em;
+			     		left:-1.8em;
+			     		top:3.2em;
+				}
+      }
+		}
+		figure{
+			width:40%;
+			margin-right:1em;
+			float:left;
+			overflow:hidden;
+			height:7em;
+			margin-bottom:2em;
+			@include s.media(m){
+				width:100%;
+				height:auto;
+				float:none;
+				margin-right:0;
+				margin-bottom:1em;
+			}
+			img{
+				width:100%;
+			}
+		}
+		h4{
+			font-size:1.3em;
+			font-family: 'Noto Sans JP', sans-serif;
+			font-weight:800;
+			color:#FFF;
+			display:block;
+			margin-bottom:0.3em;
+			padding-top:0.6em;
+			@include s.media(m){
+				font-size:1em;
+				padding-top:0;
+			}
+			@include s.media(xl){
+				font-size:1.2em;
+			}
+		}
+		p{
+			line-height:1.5;
+			display:inline-block;
+			font-family: 'Noto Sans JP', sans-serif;
+			font-weight:700;
+		}
+	}
+	&__firstDay{
+		display:block;
+		width:90%;
+	  position:absolute;
+	  right:1em;
+	  bottom:0;
+		@include s.media(m){
+			width:33.6em;
+		  	position:absolute;
+		  	right:2em;
+		  	top:-13em;
+			bottom:auto;
+		}
+	  img{
+	  	width:100%;
+	  }
+		@include s.media(m){
+			width:28em;
+		  position:absolute;
+		  right:2em;
+		  top:-10.5em;
+	  	z-index:-1;
+		}
+		@include s.media(xl){
+			width:33.6em;
+		  position:absolute;
+		  right:2em;
+		  top:-13em;
+		}
+	}
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+#wrapper .contentsBottomBox{
+	display:block;
+	background:#FFF;
+	@include s.media(m){
+		padding-top:3em;
+	}
+	&__entryBox{
+		display:none;
+		@include s.media(m){
+			display:block;
+			padding:0 3.8em;
+			margin-bottom:3em;
+		}
+		dl{
+			width:100%;
+			display:flex;
+			justify-content:center;
+			align-items:center;
+			dt{
+				width:40%;
+				position:relative;
+				display:block;
+				&::before{
+					content:" ";
+					width:6.9em;
+					height:3.8em;
+					display:block;
+					background: url(../img/home/imgArrow.png) no-repeat center top;
+					background-size:100% auto;
+					position:absolute;
+					top:50%;
+					right:4em;
+					margin-top:-1.9em;
+					@include s.media(m){
+						position:absolute;
+						top:50%;
+						right:0.5em;
+					}
+					@include s.media(xl){
+						position:absolute;
+						top:50%;
+						right:4em;
+					}
+				}
+				figure{
+					width:13em;
+					img{
+						width:100%;
+					}
+				}
+			}
+			dd{
+				width:30%;
+				display:block;
+				text-align:center;
+				padding:0 1em;
+				p{
+					font-family: 'Noto Sans JP', sans-serif;
+					font-weight:900;
+					color:#000;
+					font-size:1.6em;
+					display:block;
+				}
+				a{
+					background:#666;
+					border-radius:0.3em;
+					padding:0.6em 1em;
+					display:block;
+					color:#FFF;
+					font-size:1.5em;
+					font-family: 'Noto Sans JP', sans-serif;
+					font-weight:700;
+					@include s.media(xl){
+						font-size:1.9em;
+						padding:0.4em 1em;
+					}
+					&:hover{
+						background:#000;
+					}
+				}
+				&:nth-child(2) a{
+						background:#00c332;
+						&:hover{
+							background:#000;
+						}
+				}
+				&:nth-child(3) a{
+						background:s.$colorType02;
+						&:hover{
+							background:#000;
+						}
+				}
+			}
+		}
+	}
+	&__discountBox{
+		width:111%;
+		margin-left:-5.5%;
+		display:block;
+		background:#ffedd3;
+		padding:2em 2em;
+		position:relative;
+		margin-bottom:2em;
+		@include s.media(m){
+			padding:2em 3em;
+			border-radius:1em;
+			width:100%;
+			margin-left:0;
+		}
+		@include s.media(xl){
+			padding:2em 4em;
+		}
+		&::before{
+			content:" ";
+			width:51%;
+			height:9em;
+			display:block;
+			background: url(../img/home/imgFujiyamaru_sp.png) no-repeat right bottom;
+			background-size:100% auto;
+			position:absolute;
+			bottom:3.5em;
+			right:0.5em;
+			@include s.media(m){
+				width:33em;
+				height:14em;
+				background: url(../img/home/imgFujiyamaru.png) no-repeat right bottom;
+				background-size:100% auto;
+				position:absolute;
+				bottom:0;
+				right:1em;
+			}
+			@include s.media(xl){
+				width:38.6em;
+				height:15.3em;
+			}
+		}
+	}
+	&__discountBoxLead{
+		font-family: 'Noto Sans JP', sans-serif;
+		font-weight:900;
+		font-size:1.6em;
+		color:#000;
+		line-height:1.2;
+		text-align:center;
+		@include s.media(m){
+			font-size:1.8em;
+			text-align:left;
+		}
+		@include s.media(xl){
+			font-size:2em;
+		}
+	}
+	&__discount{
+		font-family: 'Noto Sans JP', sans-serif;
+		font-weight:900;
+		color:s.$colorType05;
+		font-size:4em;
+		small{
+			font-size:0.6em;
+		}
+	}
+	&__discountBoxSent{
+		display:none;
+		@include s.media(m){
+			display:block;
+			font-size:1.1em;
+			font-family: 'Noto Sans JP', sans-serif;
+			font-weight:800;
+		}
+	}
+	&__discountBoxSentSp{
+		font-family: 'Noto Sans JP', sans-serif;
+		font-weight:800;
+		font-size:1.1em;
+		margin-top:1em;
+		display:block;
+		@include s.media(m){
+			display:none;
+		}
+	}
+	&__owner{
+		width:80%;
+		display:block;
+		margin-left:5%;
+		@include s.media(m){
+			width:21.8em;
+			margin-left:30%;
+		}
+		img{
+			width:100%;
+		}
+	}
+}
+
+
+.homeFaceBookBnner{
+	display:block;
+	position:relative;
+	width:100%;
+	@include s.media(m){
+		width:100%;
+	}
+	&__image{
+		border:#345aa8 solid 2px;
+		@include s.media(m){
+			border:none;
+		}
+		img{
+			width:100%;
+		}
+	}
+	&__button{
+		display:inline-block;
+		position:absolute;
+		bottom:1em;
+		left:1em;
+		@include s.media(m){
+			bottom:2em;
+			left:2em;
+		}
+		a{
+			font-family: "IwaNGoPro-Th";
+			color: #FFF;
+			background: #2d5ae3;
+			display: inline-block;
+			position: relative;
+			padding: 0.3em 1em 0.3em 2.8em;
+			border-radius: 0.5em;
+			border:#FFF solid 2px;
+			@include s.media(m){
+				padding: 0.6em 1.5em 0.6em 2.8em;
+				font-size:1.8em;
+			}
+			@include s.media(xl){
+				font-size:2em;
+			}
+			&::after{
+			    content: "\f138";
+				font-family: 'icomoon';
+			    position: absolute;
+			    top: 50%;
+			    left: 1em;
+			    margin-top:-0.5em;
+			    transition: all 0.5s;
+			}
+			&:hover{
+				color:#FFF;
+				background: #1341cb;
+			}
+			&:hover::after{
+				left: 1.4em;
+			}
+		}
+	}
+}
+
+.snsBox{
+	display:block;
+	background:#fff8ee;
+	padding:3em 0 1em;
+	@include s.media(m){
+		padding:3em 0 3em;
+	}
+}
+
+.homeInstagramBox{
+	&__title{
+		font-family: "IwaGNGoPro-Bd";
+		font-weight:bold;
+		color:#000;
+		display:block;
+		font-size:1.4em;
+		position:relative;
+		text-align:center;
+		@include s.media(m){
+			font-size:2.5em;
+			text-align:left;
+		}
+		&::before{
+			@include s.media(m){
+				content:"";
+				height:2px;
+				background:#000;
+				display:block;
+				position:absolute;
+				top:50%;
+				right:0;
+				margin-top:-1px;
+				width:50%;
+			}
+			@include s.media(xl){
+				width:60%;
+			}
+		}
+	}
+	&__inner{
+		width:115%;
+		margin-left:-9%;
+		display:flex;
+		flex-wrap:wrap;
+		@include s.media(m){
+			width:100%;
+			margin-left:0;
+			flex-wrap:nowrap;
+		}
+	}
+	&__shop{
+		displady:block;
+		//width:50%;
+		padding-left:15%;
+		@include s.media(m){
+			padding:0 0.5em;
+			//width:20%;
+		}
+		@include s.media(xl){
+			padding:0 1em;
+		}
+	}
+	&__name{
+		color:s.$colorType02;
+		font-family: "IwaGNGoPro-Bd";
+		font-weight:bold;
+		font-size:1.1em;
+		line-height:1.4;
+		background:#FFF;
+		padding-left:1em;
+		padding-top:0.5em;
+		@include s.media(m){
+			font-size:1.3em;
+			padding-left:0;
+			padding-top:0;
+			margin-bottom:0.5em;
+			background:none;
+		}
+		@include s.media(xl){
+			font-size:1.4em;
+		}
+		small{
+			font-size:0.6em;
+			display:block;
+			&+span{
+				padding-top:0;
+			}
+		}
+		span{
+			display:block;
+			padding-top:0.8em;
+		}
+	}
+	&__instagram{
+		display:block;
+		background:#FFF;
+		a{
+			display:block;
+		}
+	}
+	&__headBox{
+		width:100%;
+		display:flex;
+		justify-content:space-between;
+		align-items:center;
+		padding:0.5em;
+	}
+	&__headName{
+		figure{
+			width:2em;
+			display:inline-block;
+			margin-right:0.5em;
+			vertical-align: middle;
+			img{
+				width:100%;
+			}
+		}
+		span{
+			display:inline-block;
+			overflow:hidden;
+			font-weight:bold;
+			padding-top:0.3em;
+			vertical-align: middle;
+			@include s.media(m){
+				width:6em;
+			}
+			@include s.media(xl){
+				width:8em;
+			}
+		}
+	}
+	&__headImage{
+		img{
+			width:100%;
+		}
+	}
+	&__footBox{
+		display:block;
+		padding:0.5em;
+		span{
+			float:left;
+			display:inline-block;
+			width:1em;
+			margin-right:0.5em;
+			img{
+				width:100%;
+			}
+			&:last-child{
+				float:right;
+				margin-right:0;
+			}
+		}
+	}
+}
+
+#wrapper .homeInstagramBox__instagram .instagram-media{
+	width:100% !important;
+	max-width: 100% !important;
+	min-width: initial !important;
+	iframe {
+		width: 100% !important;
+		height: 100% !important;
+	}
+	.HeaderCta{
+		display:none !important;
+  	}
+	.Footer{
+		display:none !important;
+  	}
+}
+
+#wrapper .homeBlogBox{
+	display:block;
+	padding:4em 0 6em;
+	@include s.media(m){
+		background:s.$colorType02;
+	}
+	&__title{
+		display:block;
+		text-align:center;
+		letter-spacing:0.1em;
+		@include s.media(xl){
+			font-size:1.24em;
+		}
+		span{
+			font-family: "IwaGNGoPro-Bd";
+			font-weight:bold;
+			color:s.$colorType03;
+			display:block;
+			font-size:2em;
+		}
+		small{
+			font-family: 'Lato', sans-serif;
+			font-weight:900;
+			color:s.$colorType02;
+			display:block;
+			@include s.media(m){
+				background:s.$colorType02;
+				color:#FFF;
+			}
+		}
+	}
+	&__blog{
+		display:block;
+		padding:0 1em;
+		a{
+			width:100%;
+			display:flex;
+			justify-content:center;
+			align-items:center;
+			@include s.media(m){
+				display:block;
+			}
+		}
+	}
+	&__image{
+		display:block;
+		width:28%;
+		border-radius:50%;
+		overflow:hidden;
+		@include s.media(m){
+			width:100%;
+		}
+		img{
+			width:100%;
+		}
+	}
+	&__info{
+		display:block;
+		width:43%;
+		padding-left:1em;
+		@include s.media(m){
+			width:100%;
+			padding-left:0;
+		}
+	}
+	&__date{
+		display:block;
+		color:#431b00;
+		@include s.media(m){
+			margin-bottom:1em;
+			text-align:right;
+		}
+	}
+	&__newsTitle{
+		@include s.media(xl){
+			font-size:1.24em;
+		}
+	}
+	&__inner{
+		width:118%;
+		margin-left:-9%;
+		display:block;
+		@include s.media(m){
+			width:100%;
+			margin-left:0;
+		}
+	}
+	.button--type02 a{
+		background:s.$colorType02;
+		@include s.media(m){
+			background:s.$colorType03;
+		}
+		&:hover{
+			@include s.media(m){
+				background: #c94509;
+			}
+		}
+	}
+}
+
+
+
+
+
+

@@ -1,0 +1,514 @@
+@use "../_setting" as s;
+
+.globalNavi {
+	display:none;
+	@include s.media(m){
+		display:block;
+	}
+}
+
+// .globalNaviSmall　グローバルナビ ハンバーガーメニュー
+.globalNaviSmall {
+	&__icon {
+		width: 3em;
+		height: 3em;
+		position: absolute;
+		top:0;
+		right:0;
+	}
+	&__iconButton{
+		width: 4em;
+		height: 4.5em;
+		cursor:pointer;
+		float: right;
+		display: block;
+		background: rgba(255,255,255,1);
+		position: relative;
+		margin:1.9em 1.9em 0.5em 0.5em;
+		z-index:999;
+		padding-top:1em;
+			&::before{
+				content:" ";
+				width:100%;
+				height:1em;
+				display:block;
+				background: url(../img/common/sentMenu.svg) no-repeat center top;
+				background-size:50% auto;
+				position:absolute;
+				top:0.7em;
+				left:0;
+			}
+	}
+	&__icon span {
+	    width: 2em;
+	    height: 3px;
+	    display: block;
+	    background: s.$colorType02;
+	    position: absolute;
+	    left: 58%;
+	    top: 55%;
+	    margin-left: -33%; 
+	}
+	.modal{
+		z-index:100;
+	}
+}
+	
+
+.globalNaviSmall{
+	&__icon--type01{
+		// ハンバーガーメニュー 押す前
+		span {
+		  -webkit-transition: all 0.3s;
+		          transition: all 0.3s;
+		  -webkit-transform: rotate(0deg);
+		      -ms-transform: rotate(0deg);
+		          transform: rotate(0deg); 
+		}
+		.iconButton--top {
+		  -webkit-transform: translateY(-0.7em);
+		      -ms-transform: translateY(-0.7em);
+		          transform: translateY(-0.7em); 
+		}
+		.iconButton--bottom {
+		  -webkit-transform: translateY(0.7em);
+		      -ms-transform: translateY(0.7em);
+		          transform: translateY(0.7em); 
+    	}
+
+    	// ハンバーガーメニュー hover
+		&:hover {
+			.iconButton--top {
+			  -webkit-transform: translateY(-0.8em);
+			      -ms-transform: translateY(-0.8em);
+			          transform: translateY(-0.8em);
+			}
+			.iconButton--bottom {
+			  -webkit-transform: translateY(0.8em);
+			      -ms-transform: translateY(0.8em);
+			          transform: translateY(0.8em); 
+          	}
+    	}
+
+    	// ハンバーガーメニュー 押した後の動き
+		&.is-open {
+			.iconButton--middle {
+			  background: rgba(255, 255, 255, 0);
+			}
+			.iconButton--top {
+			  -webkit-transform: rotate(-45deg) translateY(0px);
+			      -ms-transform: rotate(-45deg) translateY(0px);
+			          transform: rotate(-45deg) translateY(0px); 
+			}
+			.iconButton--bottom {
+				  -webkit-transform: rotate(45deg) translateY(0px);
+				      -ms-transform: rotate(45deg) translateY(0px);
+				          transform: rotate(45deg) translateY(0px);
+			}
+    	}
+	}
+}
+
+
+
+/* .globalNaviSmall　スマホグローバルナビ
+------------------------------------------ */
+#wrapper .globalNaviSmall {
+	display:block;
+	width:100%;
+	position: fixed;
+	z-index:888;
+	top:0;
+	left:0;
+	&__menu{
+		width:100%;
+	  	max-height: 100vh;
+		display:block;
+		&__inner{
+			width:100%;
+		  	min-height: 100vh;
+			overflow-x:hidden;
+			overflow-y:auto;
+  			padding: 2em;
+			display:block;
+			border:s.$colorType02 solid 5px;
+			@include s.media(m){
+		  	min-height: auto;
+				border:none;
+			}
+		}
+		&__main{
+			margin-top:2em;
+			margin-bottom:1em;
+			@include s.media(m){
+				margin-top:0;
+				margin-bottom:0;
+				padding-top:5em;
+			}
+			li {
+				display:block;
+				&.--type01 a{
+					position:relative;
+					font-family: 'Noto Sans JP', sans-serif;
+					font-weight:800;
+					font-size:1.4em;
+					padding-left:1em;
+					@include s.media(m){
+						padding-left:0;
+					}
+					@include s.media(xl){
+						font-size:1.5em;
+					}
+					&::after{
+						content:" ";
+						width:0.3em;
+						height:0.7em;
+						display:block;
+						background: url(../img/common/imgArrow.png) no-repeat center top;
+						background-size:100% auto;
+						position:absolute;
+						top:0.8em;
+						left:0;
+						@include s.media(m){
+							content:none;
+						}
+					}
+					&:hover{
+						color:s.$colorType02;
+					}
+				}
+				&.--type02 a{
+					display:none;
+					@include s.media(m){
+						display:block;
+						font-family: 'Noto Sans JP', sans-serif;
+						font-weight:800;
+						font-size:1.2em;
+						background:s.$colorType02;
+						color:#FFF;
+						padding:0.6em 1em;
+						margin-top:3em;
+						margin-bottom:1em;
+					}
+					&:hover{
+						background:#000;
+						color:#FFF;
+					}
+				}
+				&.--type03{
+					display:inline-block;
+					width:30%;
+					text-align:center;
+					border:s.$colorType02 solid 1px;
+					padding:0 0.5em;
+					border-radius:0.3em;
+					min-height:4em;
+					margin-left:2%;
+					margin-top:0.5em;
+					@include s.media(m){
+						display:block;
+						width:auto;
+						text-align:left;
+						border:none;
+						padding:0;
+						border-radius:0;
+						min-height:auto;
+						margin-left:0;
+						margin-top:0;
+					}
+					a{
+						display:none;
+						display:inline-block;
+						padding:2rem 0;
+						@include s.media(m){
+							display:block;
+							padding:0.4rem 0;
+						}
+					}
+					&.--typeL a{
+						padding:0.6em 0.1em;
+						@include s.media(m){
+							font-size:1em;
+							padding:0.4rem 0;
+							line-hight:1.7;
+							min-height:auto;
+						}
+					}
+				}
+				a{
+					padding:0.6rem 0;
+					display:block;
+					line-height:1.7;
+					@include s.media(m){
+						padding:0.4rem 0;
+					}
+					&:hover{
+						color:#999;
+					}
+				}
+			}
+			>li:last-child {
+				@include s.media(m){
+					margin-bottom:5em;
+				}
+			}
+		}
+		&__sub li{
+  			padding:0 0 0 1em;
+		}
+	}
+	.modal__overlay {
+		background: none;
+	}
+	.modal__container {
+		background:rgba(255,255,255,.95);
+		width:100%;
+		max-width: 100%;
+		border-radius: 0;
+  		padding: 0;
+		min-height: 100vh;
+		@include s.media(m){
+			width:25em;
+			min-height: 40em;
+			position: fixed;
+			top:0;
+			right:0;
+			display:block;
+			border-left: s.$colorType02 solid 4px;
+			border-bottom: s.$colorType02 solid 4px;
+		}
+	}
+	&__entryBox{
+		display:block;
+		background:s.$colorType01;
+		padding:2em 0.5em 1em;
+		border-radius:0.5em;
+		@include s.media(m){
+			display:none;
+		}
+		dl{
+			width:100%;
+			display:flex;
+			justify-content:center;
+			align-items:center;
+			position:relative;
+			padding-top:3em;
+			dt{
+				width:100%;
+				display:block;
+				position:absolute;
+				top:0;
+				left:0;
+				text-align:center;
+				img{
+					width:10em;
+				}
+			}
+			dd{
+				display:block;
+				text-align:center;
+				width:50%;
+				padding:0 0.5em;
+				p{
+					font-family: 'Noto Sans JP', sans-serif;
+					font-weight:900;
+					color:#000;
+					font-size:1.2em;
+					display:block;
+				}
+				a{
+					background:#666;
+					border-radius:0.3em;
+					padding:1em 1em;
+					display:block;
+					color:#FFF;
+					font-size:1em;
+					font-family: 'Noto Sans JP', sans-serif;
+					font-weight:700;
+				}
+				&:nth-child(2) a{
+						background:#00c332;
+						&:hover{
+							background:#000;
+						}
+				}
+				&:nth-child(3) a{
+						background:s.$colorType02;
+						&:hover{
+							background:#000;
+						}
+				}
+			}
+		}
+	}
+}
+
+
+/* Safari */
+_:lang(x)+_:-webkit-full-screen-document, .globalNaviSmall__menu {
+  min-height: -webkit-fill-available;
+}
+_:lang(x)+_:-webkit-full-screen-document, .globalNaviSmall__menu__inner {
+  min-height: -webkit-fill-available;
+}
+_:lang(x)+_:-webkit-full-screen-document, .modal__container {
+  min-height: -webkit-fill-available;
+}
+
+/* 最新のsafari用 */
+_::-webkit-full-page-media, _:future, :root .globalNaviSmall .modal__container {
+	@include s.media(m){
+		height: 45em;
+		overflow-y:hidden;
+	}
+}
+_::-webkit-full-page-media, _:future, :root .globalNaviSmall__menu__inner{
+	@include s.media(m){
+		padding:2em 2em 0 2em;
+		overflow-y:hidden;
+	}
+}
+
+//以下768px以上で適用される　レイアウトの指定-----------------------------------------------
+@include s.media(m){
+
+.globalNavi{
+	&__menu{
+		&__main{
+			>li {
+				width: 168px;
+				width: 16.6%;
+				height: 5em;
+				padding:1em 0 0 0;
+				text-align:center;
+				display:block;
+				float: left;
+			   	position: relative; /*z-indexの指定や子要素の基準とするために指定*/
+			   	z-index: 2; /*ドロップダウンしたメニューが隠れないように*/
+				&.pR{
+					float: right;
+				}
+				>a:before{
+					content:" ";
+					width:1px;
+					height:2em;
+					background:#CCC;
+					display:block;
+					position:absolute;
+					top:50%;
+					margin-top:-1em;
+					left:0;
+				}
+				&:last-child>a:after{
+					content:" ";
+					width:1px;
+					height:2em;
+					background:#CCC;
+					display:block;
+					position:absolute;
+					top:50%;
+					margin-top:-1em;
+					right:0;
+				}
+				a small{
+					text-align:center;
+					font-size:0.65em;
+					display:block;
+				}
+			}
+			li a {
+				text-decoration:none;
+				display:block;
+				&:hover {
+					text-decoration:none;
+				}
+			}
+			&__btn--type01{
+				width:90%;
+				background: rgba(0,0,0,0.45);
+				padding:0.5em;
+				margin:0 auto;
+				position:absolute;
+				top:15%;
+				font-size:0.9em;
+				left:5%;
+				display:block;
+				color:#FFF;
+				-webkit-transition: all .2s ease;
+			    transition: all .2s ease;
+			    a:hover &{
+			    	background:#AAA;
+			    }
+			}
+		}
+	}
+}
+
+/* When Active Page */
+body#home .globalNavi ul.globalNavi__menu__main>li:nth-child(1)>a {color:#EEE !important; pointer-events: none;}
+body#page .globalNavi ul.globalNavi__menu__main>li:nth-child(2)>a {color:#EEE !important; pointer-events: none;}
+body#■■ .globalNavi ul.globalNavi__menu__main>li:nth-child(3)>a {color:#EEE !important; pointer-events: none;}
+body#■■ .globalNavi ul.globalNavi__menu__main>li:nth-child(4)>a {color:#EEE !important; pointer-events: none;}
+body#■■ .globalNavi ul.globalNavi__menu__main>li:nth-child(5)>a {color:#EEE !important; pointer-events: none;}
+body#■■ .globalNavi ul.globalNavi__menu__main>li:nth-child(6)>a {color:#EEE !important; pointer-events: none;}
+
+
+// globalNavi__menu__sub
+.globalNavi {
+	ul{
+		li{
+			ul.globalNavi__menu__sub {
+				width:100%;
+			  	opacity: 0;  /*サブメニューは最初は非表示にしておく*/
+			  	visibility: hidden;  /*サブメニューは最初は非表示にしておく*/
+			  	position: absolute;  /*絶対配置にしておかないとうまくいかない*/
+			  	top: 3.7em;
+			  	left: 0;
+			  	border-top: 1px solid #EEE;  /*ボーダートップを指定*/
+			    -webkit-transition: all .2s ease;
+			    transition: all .2s ease;
+			    li{
+					height:auto;
+				  	float: none;  /*サブメニューはフロートさせないので解除*/
+				  	padding: 0;  /*親メニューのパディングを解除*/
+					margin:0;
+					*margin-top:-8px;
+					display:block;
+					line-height:1.5em;
+					a{
+					  	border: 1px solid #eee;  /*ボーダーの指定*/
+					  	border-top: none;  /*ボーダートップは重なって太くなるので解除。一番上は ul 要素に指定*/
+					  	padding: 0.8rem 0;
+					  	background-color: #FFF;
+						text-decoration:none;
+					  	color: #666;
+						text-align:center;
+						display:block;
+						font-size:0.9em;
+						&:hover{ 
+							color:#000;
+						  	background-color: #EEE;
+						}
+					}
+				}
+			}
+			&:hover ul.globalNavi__menu__sub {
+				width:100%;
+			  	top: 3.9em;
+			    visibility:visible;
+			    opacity: 1;
+			  	display: block;    /*マウスオーバー時にサブメニューを表示する*/
+			}
+		}
+	}
+}
+
+.globalNavi.globalNaviAccordion ul.globalNavi__menu__sub li{
+  	padding:0;
+}
+
+/* When Active Page */
+/*body#■■ .globalNavi ul.globalNavi__menu__main li:nth-child(■) ul.globalNavi__menu__sub li:nth-child(■) a { color:#000; background-color: #DDD; pointer-events: none; }*/
+
+} 
+// 768px以上で適用される　レイアウトの指定　ここまで

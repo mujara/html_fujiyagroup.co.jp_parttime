@@ -1,0 +1,103 @@
+@use "../_setting" as s;
+
+#header {
+	position: relative;
+    transition: .3s;
+    z-index:10;
+}
+
+@keyframes hscroll {
+	0% { transform:translateX(100vw); }
+	100% { transform:translateX(-100%); }
+}
+
+.header {
+    &__headTop {
+		display:none;
+		@include s.media(m){
+			background:#FFF;
+			display:block;
+			padding:0.1em 0;
+		}
+	}
+	&__flowWord{
+		display:flex;
+		width:100vw;
+		overflow:hidden;
+  		position: relative;
+		max-height:1.7em;
+		opacity:0;
+		p{
+			font-family: 'Open Sans', sans-serif;
+			font-style: italic;
+			font-weight:600;
+			color:#FFF;
+			animation:hscroll 24s linear infinite;
+			&:nth-child(2){
+				animation:hscroll 24s -12s linear infinite;
+				position: absolute;
+				top: 0;
+				left: 0;
+			}
+		}
+		img{
+			width:5em;
+			margin-right:0.5em;
+			margin-top: 0.2em;
+			@include s.media(xl){
+				margin-right:1em;
+			}
+			&:nth-child(1){display:none; @include s.media(xl){ display:inline-block; }}
+			&:nth-child(2){display:none; @include s.media(xl){ display:inline-block; }}
+		}
+		span{
+			display:inline-block;
+			margin-right:0.5em;
+			@include s.media(xl){
+				margin-right:1em;
+			}
+			&:nth-child(1){display:none; @include s.media(xl){ display:inline-block; }}
+			&:nth-child(2){display:none; @include s.media(xl){ display:inline-block; }}
+		}
+	}
+    &__siteTitleBox {
+		display:block;
+		.inBase{
+			position:relative;
+		}
+		a{
+			display:block;
+		}
+		.header__siteTitle img{
+			width:100%;
+		}
+	}
+    &__siteTitle {
+		display:block;
+		background:#FFF;
+		position:absolute;
+		top:1.9em;
+		left:0;
+		width:40.8%;
+		padding:1em;
+		@include s.media(m){
+			width:15em;
+			padding:1em;
+			position:absolute;
+			top:0;
+			left:3.8em;
+		}
+	}
+}
+
+.home .header__flowWord {
+	@include s.media(m){
+		opacity:1;
+	}
+}
+
+.home .header__headTop {
+	@include s.media(m){
+		background:s.$colorType02;
+	}
+}
